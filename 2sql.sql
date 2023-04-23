@@ -1,17 +1,32 @@
 CREATE DATABASE sales;
 USE sales;
-CREATE TABLE IF NOT EXISTS sales
- (id INT PRIMARY KEY AUTO_INCREMENT,
- order_date DATE,
- count_product INT
+CREATE TABLE IF NOT EXISTS SALESPEOPLE
+ (snum INT PRIMARY KEY,
+ sname VARCHAR(15),
+city VARCHAR(20),
+comm VARCHAR(5)
  );
- INSERT sales(order_date,count_product)
- VALUES ('20220101',156),
- ('2022-01-02',180),
- ('2022-01-03',21),
- ('2022-01-04',124),
- ('2022-01-05',341);
-
+ INSERT SALESPEOPLE(snum,sname,city,comm)
+ VALUES (1001,'Peel','London''.12'),
+ (1002,'Serres','San Jose','.13'),
+ (1004,'Motika','London','.11'),
+ (1007,'Rifkin','Barcelona','.15'),
+ (1003,'Axelrod','New York','.10');
+CREATE TABLE IF NOT EXISTS CUSTOMERS
+(cnum INT PRIMARY KEY,
+cname VARCHAR(15),
+city VARCHAR(20),
+rating INT,
+snum INT);
+INSERT CUSTOMERS(cnum,cname,city,rating,snum)
+VALUES(2001,'Hoffman','London',100,1001),
+(2002,'Giovanni','Rome',200,1003),
+(2003,'Liu','San Jose',200,1002),
+(2004,'Grass','Berlin',300,1002),
+(2006,'Clemens','London',100,1001),
+(2008,'Cisneros','San Jose',300,1007),
+(2007,'Pereira','Rome',100,1004);
+CREATE TABLE IF NOT EXISTS CUSTOMERS
 SELECT 
 	id AS 'id',
 	CASE
