@@ -43,7 +43,7 @@ snum INT);
 (3008,4723.00,'1990-10-05',2006,1001),
 (3010,1309.95,'1990-10-06',2004,1002),
 (3011,9891.88,'1990-10-06',2006,1001);
-SELECT city, sname, snum, comm FROM SALESPEOPLE; --
+SELECT city, sname, snum, comm FROM SALESPEOPLE; 
 SELECT rating,cname FROM CUSTOMERS WHERE city='San Jose';
 SELECT DISTINCT snum FROM ORDERS;
 SELECT * FROM CUSTOMERS WHERE cname LIKE 'G%';
@@ -69,10 +69,10 @@ VALUES('Вася','Васькин','начальник',40,100000,60),
 ('Сидор','Сидоров','рабочий',10,20000,35),
 ('Антон','Антонов','рабочий',8,19000,28),
 ('Юра','Юркин','рабочий',5,15000,25),
-('Максим','Воронин','рабочий',2,11000,22),
+('Максим','Воронин','рабочий',2,11000,22),
 ('Юра','Галкин','рабочий',3,12000,24),
 ('Люся','Люськина','уборщик',10,10000,49);
 SELECT salary FROM PESONAL ORDER BY salary ASC ;
+SELECT  salary FROM PESONAL ORDER BY salary DESC;
 SELECT  salary FROM PESONAL ORDER BY salary DESC LIMIT 5;
-
 SELECT speciality,  SUM(salary) AS summary_salary  FROM PESONAL  GROUP BY speciality HAVING SUM(salary)>100000 ;
